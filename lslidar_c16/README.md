@@ -145,11 +145,11 @@ Modify  	:
 4. Launch File Description:
 
    	~~~xml
-    <param name="scan_start_angle" value="0.0"/>     <!-- Scan crop start angle-->
-<param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
-    <param name="scan_num" value="8"/>      <!--Channels selected by Laserscan-->
-    <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
-   <param name="degree_mode" value="1"/>  <!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
+    <param name="scan_start_angle" value="0.0"/>     // Scan crop start angle
+<param name="scan_end_angle" value="36000.0"/>   //Scan clipping end angle, unit: 0.01 degree
+    <param name="scan_num" value="8"/>      //Channels selected by Laserscan-
+    <param name="publish_scan" value="false"/>   //Whether to publish Laserscan message type
+   <param name="degree_mode" value="1"/>  //1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° 
    ~~~
 ~~~
    
