@@ -36,7 +36,7 @@ public:
   /**
  * @brief lslidarDriver
  * @param node          raw packet output topic
- * @param private_nh    通过这个节点传参数
+ * @param private_nh    
  */
   lslidarDriver(ros::NodeHandle node, ros::NodeHandle private_nh);
 

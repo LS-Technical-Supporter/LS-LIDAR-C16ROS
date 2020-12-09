@@ -73,7 +73,7 @@ namespace lslidar_c16_decoder {
         if (sweepData->scans[scanNum].points.size() <= 1)
             return;
 
-        uint16_t point_num = 2000; //320000/16线/10圈
+        uint16_t point_num = 2000; 
         double angle_base = M_PI * 2 / point_num;
 
         scan->header.frame_id = scan_frame_id;

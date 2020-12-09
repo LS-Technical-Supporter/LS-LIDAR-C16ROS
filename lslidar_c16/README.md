@@ -99,75 +99,45 @@ Date			 : 2020-01-16
 /***********2020-04-02****************/
 Original version : lslidar_c16_v2.6.0_200116
 Revised version  : lslidar_c16_v2.6.1_200402
-Modify  		 : 1. 增加了读取设备包并解析垂直角度值的功能，用于替换原有固定的垂直角度值。
-		           2. 修改了lslidar_c16.launch文件，用于兼容选择参数和功能
+Modify  		 : 1. The function of reading device package and analyzing vertical angle value is added to replace the original fixed vertical angle value.
+		           2. Modified lslidar_ C16. Launch file, which is used for compatible selection parameters and functions
 Author			 : zx
 Date			 : 2020-04-02
 
-luanch文件说明: 
-  <node pkg="lslidar_c16_decoder" type="lslidar_c16_decoder_node" name="lslidar_c16_decoder_node" output="screen">
-    <param name="calibration_file" value="$(find lslidar_c16_decoder)/params/lslidar_c16_db.yaml" />
+Luanch File Description:  
+
+<node pkg="lslidar_c16_decoder" type="lslidar_c16_decoder_node" name="lslidar_c16_decoder_node" output="screen">
     <param name="min_range" value="0.15"/>
     <param name="max_range" value="150.0"/>
-    <param name="cbMethod" value="true"/>		//cbMethod = true表示增加x,y坐标的偏移计算补偿, false则不加
-    <param name="print_vert" value="true"/>		//print_vert = true 表示打印设备包角度信息， false表示关闭打印信息
-    <param name="config_vert_file" value="false"/>	//config_vert_file = true 表示读取yaml文件中的垂直角度， false则关闭
-    <param name="distance_unit" value="0.25"/>		//distance_unit = 0.25表示距离单位为0.25cm, = 1表示距离单位为1cm
-    <param name="time_synchronization" value="$(arg time_synchronization)"/>
+    <param name="cbMethod" value="true"/>		//cbMethod = true:It means to increase the offset calculation compensation of X and Y coordinates. If false, it will not be added
+    <param name="print_vert" value="true"/>		//print_vert = true:Indicates the angle information of the printing device package, and false means to turn off the printing information
+
+​    <param name="distance_unit" value="0.25"/>		//distance_unit = 0.25:Represents distance in 0.25cm, = 1 indicates distance in 1cm
+​    <param name="time_synchronization" value="$(arg time_synchronization)"/>  // time_synchronization = true:Indicates that GPG is used for time service
   </node>
-
-/***********2020-06-06************/
-Original version : lslidar_c16_v2.6.1_200402
-Revised version  : lslidar_c16_v3.0_200606
-Modify  		 : 1. 修改了读取设备包并解析垂直角度值和GPS时间的功能。
-
-​	                      2. 增加了读取设备包并解析3号版版本号，用于兼容V2.0版本雷达。
-
-Author			 : lqm
-Date			 : 2020-06-06
-
-
-
-/***********2020-06-19************/
-Original version :  lslidar_c16_v3.0_200606
-Revised version  : lslidar_c16_v3.0.1_200619
-Modify  		 : 1. 点云校准距离计算方式更新。
-
-Author			 : lqm
-Date			 : 2020-06-19
-
-/***********2020-08-18************/
-Original version :  lslidar_c16_v3.0.1_200619
-Revised version  : LSLIDAR_C16_V3.0.2_200818_ROSK
-Modify  		 : 1. 增加点云中每个点的线号信息。
-
-Author			 : lqm
-Date			 : 2020-08-18
-
-/***********2020-08-26************/
-Original version :  LSLIDAR_C16_V3.0.2_200818_ROSK
-Revised version  : LSLIDAR_C16_V3.0.3_200826_ROSK
-Modify  		 : 1. 更新每一帧点云的起始角度固定在0°附近，结束角度在360°。
-
-Author			 : lqm
-Date			 : 2020-08-26
 
 /***********2020-09-10************/
 Original version : LSLIDAR_C16_V3.0.3_200826_ROSK
 Revised version  : LSLIDAR_C16_V3.0.4_200910_ROSK
 Modify  	:       
-1. 新增兼容垂直角度分辨率为1.33°雷达。
-2. 增加LaserScan 消息类型发布。
-3. 新增扫描角度裁剪。
-4. 更新gps时间解析，秒+1。
-       
-             
-        launch文件说明：
-​	            <param name="degree_mode" value="1"/>   <!--1表示垂直角度分辨率为1.33°，2表示垂直角度分辨率为2° -->
- 		    <param name="scan_start_angle" value="0.0"/>     <!-- 扫描裁剪起始角-->
-    ​                 <param name="scan_end_angle" value="36000.0"/>   <!-- 扫描裁剪结束角，单位0.01°-->
-    ​                <param name="scan_num" value="8"/>      <!--LaserScan选择的通道-->
-    ​                <param name="publish_scan" value="false"/>   <!--是否发布LaserScan消息类型-->
+
+1. The new compatible vertical angle resolution is 1.33 ° radar.
+
+2. Added Laserscan message type publishing.
+
+3. Increase scan angle clipping.
+
+4. Launch File Description:
+
+    ​	            <param name="degree_mode" value="1"/>   <!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
+     		    <param name="scan_start_angle" value="0.0"/>     <!-- 
+
+    Scan crop start angle-->
+                     <param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
+                    <param name="scan_num" value="8"/>      <!--
+
+    Channels selected by Laserscan-->
+                    <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
 
 Author			 : lqm
 Date			 : 2020-09-10
@@ -179,19 +149,17 @@ Original version : LSLIDAR_C16_V3.0.4_200910_ROSK
 Revised version  : LSLIDAR_C16_V3.0.6_201202_ROSK
 Modify  	:       
 
-1. 兼容 Ubuntu18.04的ROS melodic。
 
-2. 新增nodelet.launch文件。
 
-3. 去除线号（lines/ring）信息，使用标准点云数据类型。
-       
-             
+1. Compatible with the ROS melody of ubuntu18.04.
 
-       launch文件说明：
 
-   ​	           <arg name="time_synchronization" default="false" />
 
-   <！--默认 ，时间同步为false。如果接GPS模块授时，则需改为 true。-->
+2. NEW nodelet.launch Documents.
+
+
+
+3. Remove lines / ring information and use standard point cloud data type
 
 Author			 : lqm
 Date			 : 2020-12-02

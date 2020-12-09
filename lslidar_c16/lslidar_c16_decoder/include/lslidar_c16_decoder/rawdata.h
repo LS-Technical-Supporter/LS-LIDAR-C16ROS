@@ -35,13 +35,13 @@
 
 namespace lslidar_rawdata {
 
-// static const float  ROTATION_SOLUTION_ = 0.18f;  //水平角分辨率 10hz
+// static const float  ROTATION_SOLUTION_ = 0.18f;  // 10hz
     static const int SIZE_BLOCK = 100;
     static const int RAW_SCAN_SIZE = 3;
     static const int SCANS_PER_BLOCK = 32;
     static const int BLOCK_DATA_SIZE = (SCANS_PER_BLOCK * RAW_SCAN_SIZE);  // 96
 
-    static const float ROTATION_RESOLUTION = 0.01f;   /**< degrees 旋转角分辨率*/
+    static const float ROTATION_RESOLUTION = 0.01f;   /**< degrees Rotation angle resolution*/
     static const uint16_t ROTATION_MAX_UNITS = 36000; /**< hundredths of degrees */
 
     static const unsigned int POINTS_ONE_CHANNEL_PER_SECOND = 20000;

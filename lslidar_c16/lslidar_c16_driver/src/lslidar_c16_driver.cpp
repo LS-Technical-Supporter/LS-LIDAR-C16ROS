@@ -190,8 +190,8 @@ namespace lslidar_c16_driver {
             lslidar_c16_msgs::LslidarC16Packet pkt = scan->packets[0];
             uint64_t packet_timestamp;
 
-            static uint64_t last_gps_time;    //上一个设备包的gps时间
-            static uint64_t last_packet_seconds;  //上一个数据包的时间戳
+            static uint64_t last_gps_time;    
+            static uint64_t last_packet_seconds;  
             packet_timestamp = (pkt.data[1200] +
                                 pkt.data[1201] * pow(2, 8) +
                                 pkt.data[1202] * pow(2, 16) +
