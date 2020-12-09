@@ -78,8 +78,7 @@ Note that this launch file launches both the driver and the decoder, which is th
 
 ## Bug Report
 
-
-##Version changes
+Version changes
 /***********2020-01-03****************/
 Original version : lslidar_c16_v2.02_190919
 Revised version  : lslidar_c16_v2.03_200103
@@ -106,15 +105,17 @@ Date			 : 2020-04-02
 
 Luanch File Description:  
 
+~~~xml
 <node pkg="lslidar_c16_decoder" type="lslidar_c16_decoder_node" name="lslidar_c16_decoder_node" output="screen">
     <param name="min_range" value="0.15"/>
     <param name="max_range" value="150.0"/>
     <param name="cbMethod" value="true"/>		//cbMethod = true:It means to increase the offset calculation compensation of X and Y coordinates. If false, it will not be added
     <param name="print_vert" value="true"/>		//print_vert = true:Indicates the angle information of the printing device package, and false means to turn off the printing information
+    <param name="distance_unit" value="0.25"/>		//distance_unit = 0.25:Represents distance in 0.25cm, = 1 indicates distance in 1cm
+    <param name="time_synchronization" value="$(arg time_synchronization)"/>  // time_synchronization = true:Indicates that GPG is used for time service
 
-​    <param name="distance_unit" value="0.25"/>		//distance_unit = 0.25:Represents distance in 0.25cm, = 1 indicates distance in 1cm
-​    <param name="time_synchronization" value="$(arg time_synchronization)"/>  // time_synchronization = true:Indicates that GPG is used for time service
-  </node>
+
+~~~
 
 /***********2020-09-10************/
 Original version : LSLIDAR_C16_V3.0.3_200826_ROSK
@@ -129,15 +130,15 @@ Modify  	:
 
 4. Launch File Description:
 
-    ​	            <param name="degree_mode" value="1"/>   <!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
-     		    <param name="scan_start_angle" value="0.0"/>     <!-- 
-
-    Scan crop start angle-->
-                     <param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
-                    <param name="scan_num" value="8"/>      <!--
-
-    Channels selected by Laserscan-->
-                    <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
+   	        ```xml
+    <param name="degree_mode" value="1"/>  
+<!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
+   <param name="scan_start_angle" value="0.0"/>     <!-- Scan crop start angle-->
+   <param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
+    <param name="scan_num" value="8"/>      <!--Channels selected by Laserscan-->
+ <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
+   ```
+   
 
 Author			 : lqm
 Date			 : 2020-09-10
@@ -149,15 +150,9 @@ Original version : LSLIDAR_C16_V3.0.4_200910_ROSK
 Revised version  : LSLIDAR_C16_V3.0.6_201202_ROSK
 Modify  	:       
 
-
-
 1. Compatible with the ROS melody of ubuntu18.04.
 
-
-
 2. NEW nodelet.launch Documents.
-
-
 
 3. Remove lines / ring information and use standard point cloud data type
 
