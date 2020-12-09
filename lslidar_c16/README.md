@@ -84,27 +84,36 @@ Version changes
 ### 2020-01-03
 
  Original version : lslidar_c16_v2.02_190919
+
   Revised version  : lslidar_c16_v2.03_200103
+
   Modify  		 : Add a new calibration decode for the new lslidar c16
+
   Author			 : zx
   Date			 : 2020-01-03
 
 ### 2020-01-16
 Original version : lslidar_c16_v2.03_200103
+
   Revised version  : lslidar_c16_v2.6.0_200116
+
   Modify  		 : 
 
-Adds the vertical Angle correction file lslidar_c16_db.yaml for the RoS program code
+1.Adds the vertical Angle correction file lslidar_c16_db.yaml for the RoS program code
 
-Change the range resolution to 0.25cm according to the v2.6 protocol
+2.Change the range resolution to 0.25cm according to the v2.6 protocol
   Author			 : zx
   Date			 : 2020-01-16
 
 ### 2020-04-02
 Original version : lslidar_c16_v2.6.0_200116
+
 Revised version  : lslidar_c16_v2.6.1_200402
-Modify  		 : 1. The function of reading device package and analyzing vertical angle value is added to replace the original fixed vertical angle value.
-		           2. Modified lslidar_ C16. Launch file, which is used for compatible selection parameters and functions
+
+Modify  		 : 
+
+1. The function of reading device package and analyzing vertical angle value is added to replace the original fixed vertical angle value.
+2. Modified lslidar_ C16. Launch file, which is used for compatible selection parameters and functions.
 Author			 : zx
 Date			 : 2020-04-02
 
@@ -122,7 +131,9 @@ Luanch File Description:
 
 ### 2020-09-10
 Original version : LSLIDAR_C16_V3.0.3_200826_ROSK
+
 Revised version  : LSLIDAR_C16_V3.0.4_200910_ROSK
+
 Modify  	:       
 
 1. The new compatible vertical angle resolution is 1.33 ° radar.
@@ -134,13 +145,13 @@ Modify  	:
 4. Launch File Description:
 
    	~~~xml
-    <param name="degree_mode" value="1"/>  
-<!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
-   <param name="scan_start_angle" value="0.0"/>     <!-- Scan crop start angle-->
+    <param name="degree_mode" value="1"/>  <!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
+<param name="scan_start_angle" value="0.0"/>     <!-- Scan crop start angle-->
    <param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
     <param name="scan_num" value="8"/>      <!--Channels selected by Laserscan-->
- <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
+    <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
    ~~~
+~~~
    
    
 
@@ -151,7 +162,9 @@ Date			 : 2020-09-10
 
 ### 2020-12-02
 Original version : LSLIDAR_C16_V3.0.4_200910_ROSK
+
 Revised version  : LSLIDAR_C16_V3.0.6_201202_ROSK
+
 Modify  	:       
 
 1. Compatible with the ROS melody of ubuntu18.04.
@@ -162,3 +175,4 @@ Modify  	:
 
 Author			 : lqm
 Date			 : 2020-12-02
+~~~
