@@ -73,29 +73,34 @@ roslaunch lslidar_c16_decoder lslidar_c16.launch --screen
 Note that this launch file launches both the driver and the decoder, which is the only launch file needed to be used.
 
 
+
 ## FAQ
 
 
 ## Bug Report
 
 Version changes
-/***********2020-01-03****************/
-Original version : lslidar_c16_v2.02_190919
-Revised version  : lslidar_c16_v2.03_200103
-Modify  		 : Add a new calibration decode for the new lslidar c16
-Author			 : zx
-Date			 : 2020-01-03
 
+### 2020-01-03
 
-/***********2020-01-16****************/
+ Original version : lslidar_c16_v2.02_190919
+  Revised version  : lslidar_c16_v2.03_200103
+  Modify  		 : Add a new calibration decode for the new lslidar c16
+  Author			 : zx
+  Date			 : 2020-01-03
+
+### 2020-01-16
 Original version : lslidar_c16_v2.03_200103
-Revised version  : lslidar_c16_v2.6.0_200116
-Modify  		 : Adds the vertical Angle correction file lslidar_c16_db.yaml for the RoS program code
-				   Change the range resolution to 0.25cm according to the v2.6 protocol
-Author			 : zx
-Date			 : 2020-01-16
+  Revised version  : lslidar_c16_v2.6.0_200116
+  Modify  		 : 
 
-/***********2020-04-02****************/
+Adds the vertical Angle correction file lslidar_c16_db.yaml for the RoS program code
+
+Change the range resolution to 0.25cm according to the v2.6 protocol
+  Author			 : zx
+  Date			 : 2020-01-16
+
+### 2020-04-02
 Original version : lslidar_c16_v2.6.0_200116
 Revised version  : lslidar_c16_v2.6.1_200402
 Modify  		 : 1. The function of reading device package and analyzing vertical angle value is added to replace the original fixed vertical angle value.
@@ -113,11 +118,9 @@ Luanch File Description:
     <param name="print_vert" value="true"/>		//print_vert = true:Indicates the angle information of the printing device package, and false means to turn off the printing information
     <param name="distance_unit" value="0.25"/>		//distance_unit = 0.25:Represents distance in 0.25cm, = 1 indicates distance in 1cm
     <param name="time_synchronization" value="$(arg time_synchronization)"/>  // time_synchronization = true:Indicates that GPG is used for time service
-
-
 ~~~
 
-/***********2020-09-10************/
+### 2020-09-10
 Original version : LSLIDAR_C16_V3.0.3_200826_ROSK
 Revised version  : LSLIDAR_C16_V3.0.4_200910_ROSK
 Modify  	:       
@@ -130,14 +133,15 @@ Modify  	:
 
 4. Launch File Description:
 
-   	        ```xml
+   	~~~xml
     <param name="degree_mode" value="1"/>  
 <!--1 represents the vertical angle resolution of 1.33 ° and 2 represents the vertical angle resolution of 2 ° -->
    <param name="scan_start_angle" value="0.0"/>     <!-- Scan crop start angle-->
    <param name="scan_end_angle" value="36000.0"/>   <!-- Scan clipping end angle, unit: 0.01 degree-->
     <param name="scan_num" value="8"/>      <!--Channels selected by Laserscan-->
  <param name="publish_scan" value="false"/>   <!--Whether to publish Laserscan message type-->
-   ```
+   ~~~
+   
    
 
 Author			 : lqm
@@ -145,7 +149,7 @@ Date			 : 2020-09-10
 
 
 
-/***********2020-12-02************/
+### 2020-12-02
 Original version : LSLIDAR_C16_V3.0.4_200910_ROSK
 Revised version  : LSLIDAR_C16_V3.0.6_201202_ROSK
 Modify  	:       
